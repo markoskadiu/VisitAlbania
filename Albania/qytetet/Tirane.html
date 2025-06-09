@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="al">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiranë - Albania Regions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <a href="/index.html">← Back to Regions</a>
+  </header>
+
+  <div class="container">
+    <section>
+      <h1>Tiranë</h1>
+      <img src="/images/Tiranë.png" alt="Pamje e qytetit të Tiranës">
+      <p>Kryeqyteti i Shqipërisë, i gjallë dhe i shpejtë. Tiranë is the lively and fast-paced capital of Albania.</p>
+    </section>
+
+    <h2>Bashkitë e Qarkut Tiranë</h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tirane">Tiranë</button>
+      <button class="tab-btn" data-tab="kamez">Kamëz</button>
+      <button class="tab-btn" data-tab="vore">Vorë</button>
+      <button class="tab-btn" data-tab="kavaje">Kavajë</button>
+      <button class="tab-btn" data-tab="rrogozhine">Rrogozhinë</button>
+    </div>
+
+    <div id="tirane" class="tab-content active">
+      <h3>Moti në Tiranë:</h3>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/41d3319d82/tirana/" data-label_1="TIRANA" data-label_2="WEATHER" data-theme="original" >TIRANA WEATHER</a>
+      </div>
+    </div>
+
+    <div id="kamez" class="tab-content">
+      <h3>Moti në Kamëz:</h3>
+      <!-- Replace with real widget -->
+      <a class="weatherwidget-io" href="https://forecast7.com/en/41d3819d76/kamez/" data-label_1="KAMËZ" data-label_2="WEATHER" data-theme="original" >KAMËZ WEATHER</a>
+      </div>
+    </div>
+
+    <div id="vore" class="tab-content">
+      <h3>Moti në Vorë:</h3>
+      <!-- Replace with real widget -->
+    
+        <a class="weatherwidget-io" href="https://forecast7.com/en/41d3919d66/vore/" data-label_1="VORË" data-label_2="WEATHER" data-theme="original" >VORË WEATHER</a>
+       
+      </div>
+    </div>
+
+    <div id="kavaje" class="tab-content">
+      <h3>Moti në Kavajë:</h3>
+
+      <a class="weatherwidget-io" href="https://forecast7.com/en/41d1819d56/kavaje/" data-label_1="KAVAJË" data-label_2="WEATHER" data-theme="original" >KAVAJË WEATHER</a>
+
+    </div>
+
+    <div id="rrogozhine" class="tab-content">
+      <h3>Moti në Rrogozhinë:</h3>
+
+      <a class="weatherwidget-io" href="https://forecast7.com/en/41d0819d67/rrogozhine/" data-label_1="RROGOZHINË" data-label_2="WEATHER" data-theme="original" >RROGOZHINË WEATHER</a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

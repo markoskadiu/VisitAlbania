@@ -1,0 +1,212 @@
+/* Reset & Base Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Typography */
+h1, h2 {
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005bb5;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header a {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Section Styling */
+section {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+}
+
+/* Tabs Wrapper with Scroll */
+.tabs-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.tabs-scroll {
+  overflow-x: auto;
+  flex: 1;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  margin-left: 5px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.scroll-btn {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+  margin: 3px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: #005bb5;
+}
+
+/* Tab Buttons */
+.tabs button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.tabs button:hover {
+  background-color: #ccc;
+}
+
+.tabs button.active {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  pointer-events: none;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Widget Frame Padding */
+.tab-content > div {
+  padding: 1rem 0;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 2px solid #444;
+}
+
+/* Responsive Image */
+.container img {
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .tabs-wrapper {
+    flex-direction: row;
+  }
+
+  .tabs {
+    flex-wrap: nowrap;
+  }
+
+  .tabs-scroll {
+    overflow-x: auto;
+  }
+
+  header a {
+    font-size: 1.1rem;
+  }
+
+  .tabs button {
+    width: auto;
+    text-align: left;
+  }
+
+  .scroll-btn {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

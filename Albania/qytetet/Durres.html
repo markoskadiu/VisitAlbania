@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="al">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diber - Albania Regions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://weatherwidget.io">
+<link rel="dns-prefetch" href="https://weatherwidget.io">
+<script async id="weatherwidget-io-js" src="https://weatherwidget.io/js/widget.min.js"></script>
+<!-- React & ReactDOM -->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<!-- Babel for JSX support in the browser -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+</head>
+<body>
+
+  <header>
+    <a href="../index.html">Back to Regions</a>
+  </header>
+
+  <div class="container">
+    <section>
+      <h1>Durrës</h1>
+      <img src="../images/Durres.png" alt="Diber City">
+       <h1>Informacion për Durrësin</h1>
+
+     <section>
+        <h2>Informacione të përgjithshme</h2>
+        <p><strong>Vendndodhja:</strong> Shqipëria perëndimore, buzë Detit Adriatik</p>
+        <p><strong>Popullsia:</strong> Rreth 122,000 banorë</p>
+        <p><strong>Qarku:</strong> Qarku i Durrësit</p>
+        <p><strong>Statusi UNESCO:</strong> Durrësi nuk ka status të veçantë UNESCO, por ka shumë vende historike të rëndësishme.</p>
+    </section>
+
+    <section>
+        <h2>Pse është i veçantë Durrësi</h2>
+        <p>Durrësi është një nga qytetet më të vjetra dhe më të rëndësishme në Shqipëri, me histori që daton që nga koha e Ilirëve dhe Romakëve. Është një port detar kryesor dhe destinacion i njohur turistik, sidomos për plazhet dhe kulturën e tij të pasur historike.</p>
+    </section>
+
+    <section>
+        <h2>Vendet kryesore për të vizituar</h2>
+        <ul>
+            <li><strong>Arena e Durrësit:</strong> Amfiteatri romak i ndërtuar në shekullin e II-të, një nga më të mëdhenjtë në Ballkan.</li>
+            <li><strong>Kalasë e Durrësit:</strong> Një kështjellë mesjetare me mure të mëdha dhe muze historik.</li>
+            <li><strong>Muzeu Arkeologjik i Durrësit:</strong> Me zbukurime dhe artefakte nga periudha antike.</li>
+            <li><strong>Plazhet e Durrësit:</strong> Plazhe të gjera me rërë të artë dhe mundësi të shumta për sporte ujore.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Trashëgimi kulturore dhe fetare</h2>
+        <p>Durrësi është një qytet me trashëgimi të pasur kulturore dhe fetare, ku bashkëjetojnë ndikime nga periudha të ndryshme historike, duke përfshirë periudhën romake, bizantine dhe osmane.</p>
+    </section>
+
+    <section>
+        <h2>Produkte vendase</h2>
+        <ul>
+            <li><strong>Produkte deti:</strong> Peshku dhe fruta deti të freskëta, të njohura për shijen dhe cilësinë.</li>
+            <li><strong>Verë dhe produkte bujqësore:</strong> Zona rreth Durrësit prodhon verëra cilësore dhe fruta të ndryshme.</li>
+            <li><strong>Gastronomia lokale:</strong> Gatime tradicionale si byrekë, tavë dhe pjatat me peshk të freskët.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Natyra dhe aktivitetet</h2>
+        <ul>
+            <li><strong>Plazhet e Durrësit:</strong> Relaksim, sporte ujore dhe aktivitete turistike gjatë verës.</li>
+            <li><strong>Deti Adriatik:</strong> Mundësi për varka, peshkim dhe sporte të tjera ujore.</li>
+        </ul>
+    </section>
+    </section>
+  
+
+  <h2>Bashkitë e Qarkut Berat</h2>
+
+  <div class="tabs-wrapper">
+    <button class="scroll-btn left" onclick="scrollTabs(-200)">&#10094;</button>
+    
+    <div class="tabs-scroll">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="Durrës">Durrës</button>
+        <button class="tab-btn" data-tab="Shijak">Shijak</button>
+        <button class="tab-btn" data-tab="Manzë">Manzë</button>
+        <button class="tab-btn" data-tab="Sukth">Sukth</button>
+        <button class="tab-btn" data-tab="Gjepalaj">Gjepalaj</button>
+        <button class="tab-btn" data-tab="Katund i Ri">Katund i Ri</button>
+        <button class="tab-btn" data-tab="Maminas">Maminas</button>
+        <button class="tab-btn" data-tab="Rrashbull">Rrashbull</button>
+        <button class="tab-btn" data-tab="Xhafzot">Xhafzot</button>
+        <button class="tab-btn" data-tab="Fushë-Krujë">Fushë-Krujë</button>
+        <button class="tab-btn" data-tab="Krujë">Krujë</button>
+        <button class="tab-btn" data-tab="Bubq">Bubq</button>
+        <button class="tab-btn" data-tab="Çudhi">Çudhi</button>
+        <button class="tab-btn" data-tab="Kodër-Thumanë">Kodër-Thumanë</button>
+        <button class="tab-btn" data-tab="Nikël">Nikël</button>
+      </div>
+    </div>
+  
+    <button class="scroll-btn right" onclick="scrollTabs(200)">&#10095;</button>
+  </div>
+  
+
+    <div id="Durrës" class="tab-content active">
+      <h3>Moti në Durrës:</h3>
+      
+    </div>
+    
+    <div id="Shijak" class="tab-content">
+      <h3>Moti në Shijak:</h3>
+      
+    </div>
+    
+    <div id="Manzë" class="tab-content">
+      <h3>Moti në Manzë:</h3>
+      
+    </div>
+    
+    <div id="Sukth" class="tab-content">
+      <h3>Moti në Sukth:</h3>
+      
+    </div>
+    
+    <div id="Gjepalaj" class="tab-content">
+      <h3>Moti në Gjepalaj:</h3>
+      
+    </div>
+    
+    <div id="Katund i Ri" class="tab-content">
+      <h3>Moti në Katund i Ri:</h3>
+      
+    </div>
+    
+    <div id="Maminas" class="tab-content">
+      <h3>Moti në Maminas:</h3>
+      
+    </div>
+    
+    <div id="Rrashbull" class="tab-content">
+      <h3>Moti në Rrashbull:</h3>
+      
+    </div>
+    
+    <div id="Xhafzot" class="tab-content">
+      <h3>Moti në Xhafzot:</h3>
+      
+    </div>
+    
+    <div id="Fushë-Krujë" class="tab-content">
+      <h3>Moti në Fushë-Krujë:</h3>
+      
+    </div>
+    
+    <div id="Krujë" class="tab-content">
+      <h3>Moti në Krujë:</h3>
+      
+    </div>
+    
+    <div id="Bubq" class="tab-content">
+      <h3>Moti në Bubq:</h3>
+      
+    </div>
+    
+    <div id="Çudhi" class="tab-content">
+      <h3>Moti në Çudhi:</h3>
+      
+    </div>
+    
+    <div id="Kodër-Thumanë" class="tab-content">
+      <h3>Moti në Kodër-Thumanë:</h3>
+      
+    </div>
+    
+    <div id="Nikël" class="tab-content">
+      <h3>Moti në Nikël:</h3>
+      
+    </div>
+
+    <div id="react-root"></div>
+
+
+    <script type="text/babel">
+  const App = () => {
+    return <h2>Pjese e shkruar me react</h2>;
+  };
+
+  ReactDOM.createRoot(document.getElementById('react-root')).render(<App />);
+</script>
+
+    
+    
+  <script src="script.js"></script>
+
+  
+</div>
+
+  <footer>
+    <p>&copy; 2025 Albania Regions</p>
+  </footer>
+
+</body>
+</html>

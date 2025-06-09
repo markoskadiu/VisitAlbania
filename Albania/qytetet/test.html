@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Weather Search</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      margin-top: 40px;
+    }
+
+    .dropdown-container {
+      margin-top: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .weather-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 300px;
+      display: none;
+    }
+
+    .weather-card img {
+      width: 60px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kërko Moti</h1>
+
+  <div class="dropdown-container">
+    <label for="locationSelect">Zgjidh vendndodhjen:</label>
+    <select id="locationSelect">
+      <option value="" disabled selected>-- Zgjidh Vendndodhjen --</option>
+      <!-- Sample placeholder coordinates (replace with real ones if available) -->
+      <option value="Peshkopi" data-lat="41.916" data-lon="20.319">Peshkopi</option>
+      <option value="Arras" data-lat="41.900" data-lon="20.350">Arras</option>
+      <option value="Fushë-Çidhën" data-lat="41.880" data-lon="20.310">Fushë-Çidhën</option>
+      <option value="Kala e Dodës" data-lat="41.870" data-lon="20.300">Kala e Dodës</option>
+      <option value="Kastriot" data-lat="41.860" data-lon="20.290">Kastriot</option>
+      <option value="Lurë" data-lat="41.850" data-lon="20.280">Lurë</option>
+      <option value="Luzni" data-lat="41.840" data-lon="20.270">Luzni</option>
+      <option value="Maqellarë" data-lat="41.830" data-lon="20.260">Maqellarë</option>
+      <option value="Melan" data-lat="41.820" data-lon="20.250">Melan</option>
+      <option value="Muhur" data-lat="41.810" data-lon="20.240">Muhur</option>
+      <option value="Tomin" data-lat="41.800" data-lon="20.230">Tomin</option>
+      <option value="Selishtë" data-lat="41.790" data-lon="20.220">Selishtë</option>
+      <option value="Sllovë" data-lat="41.780" data-lon="20.210">Sllovë</option>
+      <option value="Zall-Dardhë" data-lat="41.770" data-lon="20.200">Zall-Dardhë</option>
+      <option value="Zall-Reç" data-lat="41.760" data-lon="20.190">Zall-Reç</option>
+      <option value="Burrel" data-lat="41.750" data-lon="20.180">Burrel</option>
+      <option value="Klos" data-lat="41.740" data-lon="20.170">Klos</option>
+      <option value="Baz" data-lat="41.730" data-lon="20.160">Baz</option>
+      <option value="Derjan" data-lat="41.720" data-lon="20.150">Derjan</option>
+      <option value="Gurrë" data-lat="41.710" data-lon="20.140">Gurrë</option>
+      <option value="Komsi" data-lat="41.700" data-lon="20.130">Komsi</option>
+      <option value="Lis" data-lat="41.690" data-lon="20.120">Lis</option>
+      <option value="Macukull" data-lat="41.680" data-lon="20.110">Macukull</option>
+      <option value="Rukaj" data-lat="41.670" data-lon="20.100">Rukaj</option>
+      <option value="Suç" data-lat="41.660" data-lon="20.090">Suç</option>
+      <option value="Ulëz" data-lat="41.650" data-lon="20.080">Ulëz</option>
+      <option value="Xibër" data-lat="41.640" data-lon="20.070">Xibër</option>
+      <option value="Bulqizë" data-lat="41.630" data-lon="20.060">Bulqizë</option>
+      <option value="Fushë-Bulqizë" data-lat="41.620" data-lon="20.050">Fushë-Bulqizë</option>
+      <option value="Gjoricë" data-lat="41.610" data-lon="20.040">Gjoricë</option>
+      <option value="Martanesh" data-lat="41.600" data-lon="20.030">Martanesh</option>
+      <option value="Ostren" data-lat="41.590" data-lon="20.020">Ostren</option>
+      <option value="Shupenzë" data-lat="41.580" data-lon="20.010">Shupenzë</option>
+      <option value="Trebisht" data-lat="41.570" data-lon="20.000">Trebisht</option>
+      <option value="Zerqan" data-lat="41.560" data-lon="19.990">Zerqan</option>
+    </select>
+  </div>
+
+  <div class="weather-card" id="weatherCard">
+    <h2 id="locationName"></h2>
+    <p><strong>Temperatura:</strong> <span id="temperature"></span>°C</p>
+    <p><strong>Kushtet:</strong> <span id="weatherDesc"></span></p>
+    <img id="weatherIcon" src="" alt="Ikona e motit">
+  </div>
+
+  <script>
+    const apiKey = "c8d01338cf6169c66e48cc971402a47f";
+    const locationSelect = document.getElementById("locationSelect");
+    const weatherCard = document.getElementById("weatherCard");
+    const locationNameEl = document.getElementById("locationName");
+    const temperatureEl = document.getElementById("temperature");
+    const weatherDescEl = document.getElementById("weatherDesc");
+    const weatherIconEl = document.getElementById("weatherIcon");
+
+    locationSelect.addEventListener("change", async () => {
+      // Get the selected option's coordinates
+      const selectedOption = locationSelect.options[locationSelect.selectedIndex];
+      const lat = selectedOption.getAttribute("data-lat");
+      const lon = selectedOption.getAttribute("data-lon");
+      const locationDisplayName = selectedOption.value;
+
+      if (!lat || !lon) {
+        alert("Koordinatat nuk janë caktuar për këtë vendndodhje.");
+        return;
+      }
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=sq`;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Nuk u gjet");
+        const data = await res.json();
+
+        locationNameEl.textContent = data.name;
+        temperatureEl.textContent = data.main.temp;
+        weatherDescEl.textContent = data.weather[0].description;
+        weatherIconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        weatherIconEl.alt = data.weather[0].description;
+
+        weatherCard.style.display = "block";
+      } catch (error) {
+        alert("Nuk u gjet asnjë informacion për këtë vend.");
+        weatherCard.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
